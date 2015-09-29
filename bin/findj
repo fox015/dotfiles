@@ -1,0 +1,11 @@
+#! /bin/bash
+# Searches for *.java files in specified path.
+
+if [ $# -ne 1 ]
+then
+	echo "Usage: `basename $0` path"
+	exit 1
+else
+	find $1 -name "*.java"
+fi
+

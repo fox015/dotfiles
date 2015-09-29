@@ -1,0 +1,10 @@
+#! /bin/bash
+# Work in progress - try to find java classes that are not referenced in the
+# codebase.
+
+for class in $(basename -s \.java $(find src -name "*.java")) ; do
+	echo -n "$class ";
+	findj src | xargs grep $class | grep -v $class\.java | wc -l;
+done
+
+#findj src | xargs grep -f layouts 

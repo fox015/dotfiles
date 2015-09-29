@@ -1,0 +1,10 @@
+#! /bin/bash
+# Work in progress - try to find layouts that are not referenced in code or xml.
+#find res/layout -type f -exec basename {} .xml \; > layouts
+
+for layout in $(basename -s \.xml $(find res/layout -name "*.xml")) ; do
+	echo -n "$layout ";
+	findj src | xargs grep -e "R.layout.$layout[),]" -e "R.id.$layout[),]" | wc -l;
+done
+
+#findj src | xargs grep -f layouts 

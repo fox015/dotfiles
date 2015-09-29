@@ -1,0 +1,7 @@
+#! /bin/bash
+
+for f in "$@"
+do
+	echo $f
+	sed -i.bak -e "s/\s$//g" $f
+done
