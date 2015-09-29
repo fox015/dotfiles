@@ -1,17 +1,11 @@
 export CLICOLOR=true
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
 # Set up path.
 export PATH=/usr/local/bin:/usr/local/git/bin:~/bin:$PATH
 
 # Set up Android tools on path.
 ANDROID_HOME=~/Development/android-sdk-macosx
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/proguard/bin
-
-# Ruby stuff.
-PATH=~/.rbenv/bin:~/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -28,4 +22,13 @@ set -o vi
 function beep {
 	echo -n -e "\a"
 }
+
+### Work stuff below.
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+## Ruby stuff.
+PATH=~/.rbenv/bin:~/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+eval "$(rbenv init -)"
+
 
